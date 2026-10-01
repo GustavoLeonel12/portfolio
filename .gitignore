@@ -17,6 +17,22 @@ dist-ssr
 .env.*
 !.env.example
 
+# Pacotes e instaladores: ja entraram no historico por accident
+# (Git-2.56.0-64-bit.exe, portfólio.zip) e nao pertencem ao repositorio.
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.exe
+*.msi
+*.deb
+*.rpm
+*.dmg
+*.pkg
+*.appimage
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
