@@ -1,0 +1,502 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-h) + clamp(2rem, 6vh, 4rem));
+  padding-bottom: clamp(4rem, 10vh, 7rem);
+  overflow: hidden;
+}
+
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 62px 62px;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  width: 100%;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.eyebrowWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: clamp(1.2rem, 3vh, 2rem);
+}
+
+.statusDot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 99px;
+  background: #28c840;
+  box-shadow: 0 0 10px rgba(40, 200, 64, 0.9);
+  flex-shrink: 0;
+}
+
+.statusDot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 99px;
+  border: 1px solid rgba(40, 200, 64, 0.6);
+  animation: ping 2.4s ease-out infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.9;
+  }
+  80%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+/* nome */
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3.2rem, 9vw, 8.25rem);
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  margin-bottom: clamp(0.8rem, 2vh, 1.4rem);
+  /* onda de cor: 13 letras (GUSTAVO + LEONEL) × 0.15s = ciclo de 1.95s,
+     com sobreposição entre letras vizinhas para a onda parecer continua */
+  --wave-step: 0.15s;
+  --wave-cycle: 1.95s;
+}
+
+/* Cada linha recebe o gradiente para não escurecer a segunda.
+   :global é obrigatório: .reveal-line é global, e o CSS Modules
+   hasheria o nome se fosse escrito direto aqui.
+
+   A onda de cor é a PRIMEIRA camada do background: um gradiente horizontal
+   claro, mais largo que a caixa, que desliza da esquerda para a direita
+   revelando as letras por baixo. Por ser `background-clip: text`, o brilho
+   acompanha exatamente o formato da letra.
+
+   Por que não dividir em <span> por letra? Porque o navegador perde o
+   kerning entre elementos e o título crescia ~19px (517,77 → 536,72),
+   o que mudaria o espaçamento original. O gradiente deslizante produz a
+   mesma onda, letra por letra, sem tocar no layout. */
+.name :global(.reveal-line) > span {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(124, 196, 255, 0) 0%,
+      rgba(124, 196, 255, 0) 40%,
+      rgba(214, 238, 255, 0.95) 47%,
+      rgba(124, 196, 255, 0.3) 54%,
+      rgba(124, 196, 255, 0) 61%,
+      rgba(124, 196, 255, 0) 100%
+    ),
+    linear-gradient(165deg, #ffffff 0%, #dbe6fb 38%, #7cc4ff 78%, #2f6bff 100%);
+  background-size: 200% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+  /* 125% deixa a banda totalmente fora da caixa à esquerda; -25% a joga
+     totalmente para fora à direita — o reinício do loop fica invisível */
+  background-position: 125% 0%, 0% 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: nameWave var(--wave-cycle) linear infinite;
+}
+
+/* GUSTAVO tem 7 letras, LEONEL 6: a segunda linha entra 7 passos depois,
+   para a onda correr G → … → L sem saltar */
+.name :global(.reveal-line) > span {
+  animation-delay: 0s;
+}
+
+.name :global(.reveal-line).nameRest > span {
+  animation-delay: calc(7 * var(--wave-step));
+}
+
+@keyframes nameWave {
+  from {
+    background-position: 125% 0%, 0% 0%;
+  }
+  to {
+    background-position: -25% 0%, 0% 0%;
+  }
+}
+
+/* glow suave no nome, na mesma cadência da onda */
+.name {
+  animation: nameGlow var(--wave-cycle) ease-in-out infinite;
+}
+
+@keyframes nameGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(77, 139, 255, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(77, 139, 255, 0.4));
+  }
+}
+
+/* quem pediu menos movimento fica com o gradiente estático */
+@media (prefers-reduced-motion: reduce) {
+  .name,
+  .name :global(.reveal-line) > span,
+  .aiBadge,
+  .aiBadge svg {
+    animation: none;
+  }
+}
+
+/* segunda linha recuada — quase alinhada à primeira */
+.nameRest {
+  margin-left: 0.26em;
+}
+
+/* tagline */
+.tagline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: clamp(0.66rem, 1.1vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--blue-soft);
+  text-transform: uppercase;
+  margin-bottom: 1.3rem;
+}
+
+.tagWord {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.tagWord + .tagWord::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 99px;
+  background: currentColor;
+  opacity: 0.55;
+}
+
+/* selo de entusiasta de IA */
+.aiBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.5rem 0.9rem;
+  margin-top: -0.55rem;
+  margin-bottom: 1.15rem;
+  border: 1px solid rgba(124, 196, 255, 0.3);
+  border-radius: 999px;
+  background: linear-gradient(120deg, rgba(47, 107, 255, 0.16), rgba(124, 196, 255, 0.05));
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-soft);
+  box-shadow: 0 0 30px -14px var(--blue-glow);
+  animation: badgeGlow 3.6s ease-in-out infinite;
+}
+
+.aiBadge svg {
+  animation: badgeSpark 3.6s ease-in-out infinite;
+}
+
+@keyframes badgeGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 24px -16px var(--blue-glow);
+  }
+  50% {
+    box-shadow: 0 0 34px -10px var(--blue-glow);
+  }
+}
+
+@keyframes badgeSpark {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(0.94) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08) rotate(12deg);
+  }
+}
+
+.phrase {
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.68;
+  font-weight: 300;
+  color: var(--text-dim);
+  max-width: 46ch;
+  margin-bottom: clamp(1.6rem, 4vh, 2.4rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: clamp(1.8rem, 4vh, 2.6rem);
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: all 0.4s var(--ease-out);
+}
+
+.social:hover {
+  color: var(--text);
+  border-color: var(--line-accent);
+  background: rgba(47, 107, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -14px var(--blue-glow);
+}
+
+.socialLabel {
+  position: relative;
+}
+
+/* visual */
+.visual {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+}
+
+.visualFrame {
+  position: absolute;
+  inset: -4%;
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+.visualFrame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: radial-gradient(
+    60% 60% at 50% 40%,
+    rgba(47, 107, 255, 0.07),
+    transparent 70%
+  );
+}
+
+.cornerTL,
+.cornerTR,
+.cornerBL,
+.cornerBR {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--blue);
+  opacity: 0.75;
+}
+
+.cornerTL {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 6px 0 0 0;
+}
+.cornerTR {
+  top: -1px;
+  right: -1px;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 6px 0 0;
+}
+.cornerBL {
+  bottom: -1px;
+  left: -1px;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 6px;
+}
+.cornerBR {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 6px 0;
+}
+
+.status {
+  position: absolute;
+  right: 4%;
+  top: 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(4, 6, 10, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.statusLabel {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.24em;
+  color: var(--text-faint);
+}
+
+.statusValue {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: #6ee7a0;
+  text-shadow: 0 0 12px rgba(110, 231, 160, 0.5);
+}
+
+.scrollHint {
+  position: absolute;
+  left: 50%;
+  bottom: 1.6rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-faint);
+  transition: color 0.35s var(--ease-out);
+}
+
+.scrollHint:hover {
+  color: var(--blue-soft);
+}
+
+.scrollIcon {
+  animation: bounce 2.4s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+/* ---------- responsivo ---------- */
+
+@media (max-width: 1080px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .content {
+    max-width: none;
+  }
+
+  .visual {
+    order: 2;
+    max-width: 460px;
+    margin-inline: auto;
+  }
+
+  .hero {
+    padding-top: calc(var(--nav-h) + 1.5rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .name {
+    font-size: clamp(2.7rem, 17vw, 5rem);
+  }
+
+  .nameRest {
+    margin-left: 0.2em;
+  }
+
+  .tagline {
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    gap: 0.4rem;
+  }
+
+  .actions .btn {
+    flex: 1 1 auto;
+  }
+
+  .socialLabel {
+    display: none;
+  }
+
+  .social {
+    padding: 0.65rem;
+  }
+
+  .status {
+    right: 0;
+    top: 2%;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .scrollHint {
+    display: none;
+  }
+}

@@ -1,0 +1,159 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  padding: 1.4rem 1.35rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  overflow: hidden;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--blue-soft);
+  background: rgba(47, 107, 255, 0.07);
+  flex-shrink: 0;
+  transition: all 0.45s var(--ease-out);
+}
+
+.card:hover .icon {
+  color: #fff;
+  border-color: var(--blue-bright);
+  background: rgba(47, 107, 255, 0.2);
+}
+
+.kind {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-soft);
+}
+
+.year {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+}
+
+.course {
+  text-transform: uppercase;
+  letter-spacing: -0.008em;
+  color: var(--text);
+  transition: color 0.35s var(--ease-out);
+}
+
+.card:hover .course {
+  color: #fff;
+}
+
+.area {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-dim);
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.statusDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 99px;
+  background: var(--text-faint);
+  flex-shrink: 0;
+}
+
+.status[data-status='concluído'] {
+  color: #6ee7a0;
+}
+.status[data-status='concluído'] .statusDot {
+  background: #28c840;
+  box-shadow: 0 0 8px rgba(40, 200, 64, 0.7);
+}
+
+.status[data-status='em andamento'] {
+  color: var(--blue-soft);
+}
+.status[data-status='em andamento'] .statusDot {
+  background: var(--blue-soft);
+  box-shadow: 0 0 8px rgba(124, 196, 255, 0.7);
+  animation: blinkDot 1.8s ease-in-out infinite;
+}
+
+@keyframes blinkDot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.arrow {
+  color: var(--text-faint);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: all 0.45s var(--ease-out);
+}
+
+.card:hover .arrow {
+  opacity: 1;
+  transform: none;
+  color: var(--blue-soft);
+}
+
+@media (max-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arrow {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,78 @@
+name: Deploy
+
+# Dispara a cada push na branch principal e tambem sob demanda (aba Actions).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Nao pode ser 'write-all': o Pages precisa de id-token (OIDC) para publicar.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Sem concurrency, dois pushes seguidos podem publicar builds fora de ordem.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          # exigencia do Vite 8: ^20.19.0 || >=22.12.0
+          node-version: 22
+          cache: npm
+
+      - name: Resolver base do GitHub Pages
+        id: base
+        run: |
+          repo="${{ github.event.repository.name }}"
+          if [ -f CNAME ]; then
+            base="/"
+          elif [ "${repo%.github.io}" != "$repo" ]; then
+            base="/"
+          else
+            base="/$repo/"
+          fi
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Build
+        env:
+          BASE_PATH: ${{ steps.base.outputs.base }}
+        run: npm run build
+
+      # O CNAME precisa viajar no artefato publicado para o dominio
+      # continuar apontando apos cada build.
+      - name: Copiar CNAME
+        if: hashFiles('CNAME') != ''
+        run: cp CNAME dist/CNAME
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload do artefato
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,339 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+  /* cada linha tem a altura do seu card mais alto; align-items implícito
+     (stretch) faz os irmãos da linha acompanharem, sem altura manual */
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  grid-column: span 2;
+  padding: 1.6rem 1.5rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 260px;
+  overflow: hidden;
+}
+
+/* A soma dos spans precisa fechar em 6 por linha: 3+3 na primeira,
+   2+2+2 na segunda. Qualquer outro total deixa um card sozinho
+   numa terceira linha e desalinha a grade. */
+.card[data-span='lg'],
+.card[data-span='md'] {
+  grid-column: span 3;
+}
+
+.card[data-span='sm'] {
+  grid-column: span 2;
+}
+
+.card[data-span='full'] {
+  grid-column: span 6;
+  min-height: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  padding-block: 1.9rem;
+}
+
+.card[data-span='full'] .cardTop {
+  order: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 0;
+  align-self: stretch;
+  justify-content: space-between;
+}
+
+.card[data-span='full'] .title {
+  order: 2;
+  flex: 1;
+  align-self: center;
+}
+
+.card[data-span='full'] .desc {
+  order: 3;
+  max-width: 52ch;
+}
+
+.card[data-span='full'] .keywords {
+  order: 4;
+  margin-top: 0;
+  padding-top: 0;
+  max-width: 300px;
+  align-content: flex-start;
+}
+
+.card[data-span='full'] .arrow {
+  top: 1.4rem;
+  bottom: auto;
+}
+
+/* card em destaque: IA abre a grade */
+.card[data-featured] {
+  border-color: rgba(124, 196, 255, 0.24);
+  background: linear-gradient(
+    155deg,
+    rgba(47, 107, 255, 0.12),
+    rgba(255, 255, 255, 0.02) 55%
+  );
+}
+
+.card[data-featured]::after {
+  background: radial-gradient(
+    460px circle at var(--spot-x, 30%) var(--spot-y, 20%),
+    rgba(124, 196, 255, 0.2),
+    transparent 62%
+  );
+  opacity: 1;
+}
+
+.card[data-featured] .title {
+  color: #fff;
+}
+
+.card[data-featured] .iconWrap {
+  color: #fff;
+  border-color: rgba(124, 196, 255, 0.4);
+  background: rgba(47, 107, 255, 0.2);
+}
+
+.card[data-featured] .keyword {
+  color: var(--blue-soft);
+  border-color: rgba(47, 107, 255, 0.22);
+}
+
+/* o selo precisa de folga: fica entre o ícone e o código do canto */
+.card[data-featured] .code {
+  margin-left: 0.6rem;
+}
+
+.featuredTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  padding: 0.24rem 0.5rem;
+  border: 1px solid rgba(124, 196, 255, 0.32);
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.16em;
+  color: var(--blue-soft);
+  background: rgba(47, 107, 255, 0.12);
+  animation: featuredPulse 3.4s ease-in-out infinite;
+}
+
+@keyframes featuredPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(124, 196, 255, 0);
+  }
+  50% {
+    box-shadow: 0 0 18px -6px rgba(124, 196, 255, 0.6);
+  }
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.iconWrap {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--blue-soft);
+  background: rgba(47, 107, 255, 0.07);
+  transition: all 0.45s var(--ease-out);
+}
+
+.card:hover .iconWrap {
+  color: #fff;
+  border-color: var(--blue-bright);
+  background: rgba(47, 107, 255, 0.22);
+  transform: translateY(-2px) rotate(-3deg);
+  box-shadow: 0 0 26px -6px var(--blue-glow);
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--text-faint);
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  color: var(--text);
+  transition: color 0.35s var(--ease-out);
+}
+
+.card:hover .title {
+  color: #fff;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.68;
+  font-weight: 300;
+  color: var(--text-dim);
+  max-width: 44ch;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
+}
+
+.keyword {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 0.28rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  transition: all 0.35s var(--ease-out);
+}
+
+.card:hover .keyword {
+  color: var(--blue-soft);
+  border-color: rgba(47, 107, 255, 0.28);
+}
+
+.arrow {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 1.5rem;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  opacity: 0;
+  transform: translate(-6px, 6px);
+  transition: all 0.45s var(--ease-out);
+}
+
+.card:hover .arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+  color: #fff;
+  border-color: var(--blue-bright);
+  background: rgba(47, 107, 255, 0.2);
+}
+
+/* brilho que atravessa o card */
+.sweep {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(124, 196, 255, 0.09),
+    transparent
+  );
+  transform: skewX(-14deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card:hover .sweep {
+  opacity: 1;
+  animation: sweep 0.9s var(--ease-out) forwards;
+}
+
+@keyframes sweep {
+  to {
+    left: 120%;
+  }
+}
+
+/* Tablet: 2 colunas (span 3). São 5 cards, então o último fecha a linha
+   ocupando a largura toda — sem ele sobraria um buraco de meia grade. */
+@media (max-width: 1180px) {
+  .card,
+  .card[data-span='lg'],
+  .card[data-span='md'],
+  .card[data-span='sm'],
+  .card[data-span='full'] {
+    grid-column: span 3;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 250px;
+  }
+
+  .card:last-child {
+    grid-column: span 6;
+  }
+
+  .card[data-span='full'] .cardTop {
+    order: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-self: auto;
+  }
+
+  .card[data-span='full'] .title,
+  .card[data-span='full'] .desc,
+  .card[data-span='full'] .keywords {
+    order: 0;
+    max-width: none;
+    align-self: auto;
+  }
+
+  .card[data-span='full'] .keywords {
+    margin-top: auto;
+    padding-top: 0.9rem;
+  }
+
+  .card[data-span='full'] .arrow {
+    top: auto;
+    bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .card[data-span='lg'],
+  .card[data-span='md'],
+  .card[data-span='sm'],
+  .card[data-span='full'],
+  .card:last-child {
+    grid-column: span 1;
+    min-height: 0;
+    /* padding inferior maior: a seta fica sempre visível aqui e não
+       ficaria por cima da última keyword */
+    padding: 1.4rem 1.25rem 3.4rem;
+  }
+
+  .arrow {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,60 @@
+.wrap {
+  display: inline-flex;
+  align-items: flex-end;
+  /* assinatura horizontal e larga: largura maior, altura derivada do viewBox */
+  width: clamp(180px, 24vw, 275px);
+  max-width: 100%;
+  /* desce a assinatura para alinhar com a linha de base do texto ao lado */
+  margin-bottom: -0.12em;
+  color: #f2f6ff;
+  transform-origin: left center;
+  transition:
+    transform 300ms ease,
+    filter 300ms ease;
+}
+
+/* HOVER — brilho sutil, sem reiniciar a escrita */
+.wrap:hover {
+  transform: scale(1.02);
+  filter: brightness(1.12) drop-shadow(0 0 6px rgba(77, 139, 255, 0.35));
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  background: transparent;
+}
+
+/* Traços: geometria via CSS; desenho progressivo via WAAPI (JS) */
+.path {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Ponta da caneta: brilho discreto que acompanha o traçado */
+.tip {
+  fill: #fff;
+  opacity: 0;
+  filter:
+    drop-shadow(0 0 3px rgba(190, 220, 255, 0.95))
+    drop-shadow(0 0 9px rgba(77, 139, 255, 0.55));
+}
+
+/* Mobile: adapta proporcionalmente */
+@media (max-width: 560px) {
+  .wrap {
+    width: clamp(180px, 52vw, 240px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tip {
+    display: none;
+  }
+  .wrap {
+    transition: none;
+  }
+}

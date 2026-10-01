@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1018"/>
+      <stop offset="55%" stop-color="#070c14"/>
+      <stop offset="100%" stop-color="#04070c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2a6b"/>
+      <stop offset="50%" stop-color="#2f6bff"/>
+      <stop offset="100%" stop-color="#7cc4ff"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7cc4ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7cc4ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/>
+    </pattern>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="rgba(124,196,255,0.16)"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <circle cx="1180" cy="300" r="420" fill="rgba(47,107,255,0.10)"/>
+  <circle cx="320" cy="820" r="360" fill="rgba(47,107,255,0.06)"/>
+<text x="120" y="132" font-family="'JetBrains Mono',monospace" font-size="18" letter-spacing="2.52" fill="#7cc4ff" fill-opacity="0.75">ZYNO WEB</text>
+<text x="120" y="164" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.82" fill="#7cc4ff" fill-opacity="0.4">APLICAÇÃO WEB · DASHBOARD</text>
+
+  <g>
+    <rect x="120" y="210" width="1360" height="640" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+    <rect x="120" y="210" width="1360" height="42" rx="14" fill="rgba(255,255,255,0.035)"/>
+    <rect x="120" y="238" width="1360" height="14" fill="rgba(255,255,255,0.035)"/>
+    <line x1="120" y1="252" x2="1480" y2="252" stroke="rgba(255,255,255,0.08)"/>
+    <circle cx="146" cy="231" r="5" fill="#ff5f57" fill-opacity="0.65"/>
+    <circle cx="166" cy="231" r="5" fill="#febc2e" fill-opacity="0.65"/>
+    <circle cx="186" cy="231" r="5" fill="#28c840" fill-opacity="0.65"/>
+    
+  <g>
+    <rect x="160" y="290" width="200" height="520" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)"/>
+    <text x="184" y="330" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.35">MENU</text>
+    <rect x="180" y="360" width="100" height="10" rx="5" fill="rgba(255,255,255,0.12)"/><rect x="180" y="404" width="120" height="10" rx="5" fill="rgba(47,107,255,0.75)"/><rect x="180" y="448" width="100" height="10" rx="5" fill="rgba(255,255,255,0.12)"/><rect x="180" y="492" width="100" height="10" rx="5" fill="rgba(255,255,255,0.12)"/><rect x="180" y="536" width="100" height="10" rx="5" fill="rgba(255,255,255,0.12)"/><rect x="180" y="580" width="100" height="10" rx="5" fill="rgba(255,255,255,0.12)"/>
+  </g>
+  <g>
+    <rect x="400" y="290" width="260" height="150" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)"/>
+      <rect x="422" y="316" width="70" height="7" rx="3.5" fill="rgba(255,255,255,0.18)"/>
+      <text x="422" y="400" font-family="'Space Grotesk',sans-serif" font-size="40" font-weight="600" fill="#e9edf6" fill-opacity="0.9">1.2k</text><rect x="700" y="290" width="260" height="150" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)"/>
+      <rect x="722" y="316" width="70" height="7" rx="3.5" fill="rgba(255,255,255,0.18)"/>
+      <text x="722" y="400" font-family="'Space Grotesk',sans-serif" font-size="40" font-weight="600" fill="#e9edf6" fill-opacity="0.9">87%</text><rect x="1000" y="290" width="260" height="150" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)"/>
+      <rect x="1022" y="316" width="70" height="7" rx="3.5" fill="rgba(255,255,255,0.18)"/>
+      <text x="1022" y="400" font-family="'Space Grotesk',sans-serif" font-size="40" font-weight="600" fill="#e9edf6" fill-opacity="0.9">34</text>
+  </g>
+  <g>
+    <rect x="400" y="470" width="860" height="200" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.07)"/>
+    <rect x="428" y="600" width="34" height="40" rx="6" fill="url(#accent)" fill-opacity="0.3"/><rect x="496" y="578" width="34" height="62" rx="6" fill="url(#accent)" fill-opacity="0.35"/><rect x="564" y="606" width="34" height="34" rx="6" fill="url(#accent)" fill-opacity="0.4"/><rect x="632" y="552" width="34" height="88" rx="6" fill="url(#accent)" fill-opacity="0.45"/><rect x="700" y="586" width="34" height="54" rx="6" fill="url(#accent)" fill-opacity="0.5"/><rect x="768" y="530" width="34" height="110" rx="6" fill="url(#accent)" fill-opacity="0.55"/><rect x="836" y="568" width="34" height="72" rx="6" fill="url(#accent)" fill-opacity="0.6000000000000001"/><rect x="904" y="544" width="34" height="96" rx="6" fill="url(#accent)" fill-opacity="0.65"/><rect x="972" y="580" width="34" height="60" rx="6" fill="url(#accent)" fill-opacity="0.7"/><rect x="1040" y="556" width="34" height="84" rx="6" fill="url(#accent)" fill-opacity="0.75"/><rect x="1108" y="596" width="34" height="44" rx="6" fill="url(#accent)" fill-opacity="0.8"/><rect x="1176" y="540" width="34" height="100" rx="6" fill="url(#accent)" fill-opacity="0.8500000000000001"/>
+  </g>
+  <g>
+    <rect x="400" y="700" width="560" height="110" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.07)"/>
+    <rect x="424" y="724" width="420" height="8" rx="4" fill="rgba(255,255,255,0.12)"/><rect x="424" y="750" width="350" height="8" rx="4" fill="rgba(255,255,255,0.12)"/><rect x="424" y="776" width="280" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
+  </g>
+  <g>
+    <rect x="1000" y="700" width="260" height="110" rx="10" fill="rgba(47,107,255,0.08)" stroke="rgba(47,107,255,0.28)"/>
+    <text x="1024" y="742" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.4">STATUS</text>
+    <circle cx="1032" cy="774" r="6" fill="#28c840"/>
+    <text x="1050" y="780" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.6">OPERACIONAL</text>
+  </g>
+  
+  </g>
+<rect x="0" y="0" width="1600" height="1000" fill="none" stroke="rgba(47,107,255,0.18)" stroke-width="2"/>
+</svg>

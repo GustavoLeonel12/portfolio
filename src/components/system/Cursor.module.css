@@ -1,0 +1,86 @@
+.wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  backdrop-filter: invert(4%) brightness(120%);
+  transition:
+    width 0.35s var(--ease-out),
+    height 0.35s var(--ease-out),
+    background-color 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out),
+    opacity 0.3s ease;
+  will-change: transform;
+}
+
+.ring[data-down='true'] {
+  opacity: 0.35;
+}
+
+.ring::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(124, 196, 255, 0.55);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.ring:hover {
+  opacity: 1;
+}
+
+.ring[data-mode='view']::after {  opacity: 0.5;
+  animation: ringPulse 2.2s ease-out infinite;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: #dceaff;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  box-shadow: 0 0 10px rgba(124, 196, 255, 0.9);
+  transition:
+    opacity 0.25s ease,
+    transform 0.05s linear;
+  will-change: transform;
+}
+
+@keyframes ringPulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}

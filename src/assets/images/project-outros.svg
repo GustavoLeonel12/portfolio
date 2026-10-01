@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1018"/>
+      <stop offset="55%" stop-color="#070c14"/>
+      <stop offset="100%" stop-color="#04070c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2a6b"/>
+      <stop offset="50%" stop-color="#2f6bff"/>
+      <stop offset="100%" stop-color="#7cc4ff"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7cc4ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7cc4ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/>
+    </pattern>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="rgba(124,196,255,0.16)"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <circle cx="1180" cy="300" r="420" fill="rgba(47,107,255,0.10)"/>
+  <circle cx="320" cy="820" r="360" fill="rgba(47,107,255,0.06)"/>
+<text x="120" y="132" font-family="'JetBrains Mono',monospace" font-size="18" letter-spacing="2.52" fill="#7cc4ff" fill-opacity="0.75">AUTOMAÇÃO &amp; INFRAESTRUTURA</text>
+<text x="120" y="164" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.82" fill="#7cc4ff" fill-opacity="0.4">SCRIPTS · PROVISIONAMENTO · MONITORAMENTO</text>
+<g>
+  <rect x="120" y="210" width="700" height="460" rx="14" fill="#05080e" stroke="rgba(255,255,255,0.1)"/>
+  <rect x="164" y="262" width="70" height="8" rx="4" fill="rgba(124,196,255,0.5)"/><rect x="164" y="290" width="200" height="8" rx="4" fill="rgba(255,255,255,0.28)"/><rect x="164" y="318" width="300" height="8" rx="4" fill="rgba(47,107,255,0.5)"/><rect x="164" y="346" width="420" height="8" rx="4" fill="rgba(255,255,255,0.18)"/><rect x="164" y="374" width="180" height="8" rx="4" fill="rgba(124,196,255,0.5)"/><rect x="164" y="402" width="340" height="8" rx="4" fill="rgba(255,255,255,0.28)"/><rect x="164" y="430" width="260" height="8" rx="4" fill="rgba(47,107,255,0.5)"/><rect x="164" y="458" width="150" height="8" rx="4" fill="rgba(255,255,255,0.18)"/><rect x="164" y="486" width="400" height="8" rx="4" fill="rgba(124,196,255,0.5)"/><rect x="164" y="514" width="220" height="8" rx="4" fill="rgba(255,255,255,0.28)"/><rect x="164" y="542" width="310" height="8" rx="4" fill="rgba(47,107,255,0.5)"/><rect x="164" y="570" width="190" height="8" rx="4" fill="rgba(255,255,255,0.18)"/><rect x="164" y="598" width="380" height="8" rx="4" fill="rgba(124,196,255,0.5)"/><rect x="164" y="626" width="240" height="8" rx="4" fill="rgba(255,255,255,0.28)"/>
+  <circle cx="164" cy="240" r="5" fill="#2f6bff"/>
+  <text x="182" y="245" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">deploy.sh — bash</text>
+</g>
+<g>
+  <rect x="860" y="210" width="620" height="460" rx="14" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="900" y="258" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.45">MONITORAMENTO</text>
+  <g><text x="900" y="312" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">CPU</text>
+    <rect x="960" y="300" width="470" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+    <rect x="960" y="300" width="404.2" height="8" rx="4" fill="url(#accent)" fill-opacity="0.8"/>
+    <circle cx="1364.2" cy="304" r="6" fill="#7cc4ff"/></g><g><text x="900" y="372" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">MEM</text>
+    <rect x="960" y="360" width="470" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+    <rect x="960" y="360" width="291.4" height="8" rx="4" fill="url(#accent)" fill-opacity="0.8"/>
+    <circle cx="1251.4" cy="364" r="6" fill="#7cc4ff"/></g><g><text x="900" y="432" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">DISK</text>
+    <rect x="960" y="420" width="470" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+    <rect x="960" y="420" width="347.8" height="8" rx="4" fill="url(#accent)" fill-opacity="0.8"/>
+    <circle cx="1307.8" cy="424" r="6" fill="#7cc4ff"/></g><g><text x="900" y="492" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">NET</text>
+    <rect x="960" y="480" width="470" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+    <rect x="960" y="480" width="211.5" height="8" rx="4" fill="url(#accent)" fill-opacity="0.8"/>
+    <circle cx="1171.5" cy="484" r="6" fill="#7cc4ff"/></g><g><text x="900" y="552" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">SWITCH</text>
+    <rect x="960" y="540" width="470" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+    <rect x="960" y="540" width="423" height="8" rx="4" fill="url(#accent)" fill-opacity="0.8"/>
+    <circle cx="1383" cy="544" r="6" fill="#7cc4ff"/></g><g><text x="900" y="612" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">BACKUP</text>
+    <rect x="960" y="600" width="470" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+    <rect x="960" y="600" width="319.6" height="8" rx="4" fill="url(#accent)" fill-opacity="0.8"/>
+    <circle cx="1279.6" cy="604" r="6" fill="#7cc4ff"/></g>
+</g>
+<g>
+  <rect x="120" y="710" width="1360" height="140" rx="14" fill="rgba(47,107,255,0.06)" stroke="rgba(47,107,255,0.25)"/>
+  <g><rect x="168" y="750" width="220" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="190" y="786" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.5">PROVISIONING</text>
+    <circle cx="364" cy="780" r="5" fill="#7cc4ff" fill-opacity="0.7"/></g><g><rect x="436" y="750" width="220" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="458" y="786" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.5">BACKUP 3-2-1</text>
+    <circle cx="632" cy="780" r="5" fill="#7cc4ff" fill-opacity="0.7"/></g><g><rect x="704" y="750" width="220" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="726" y="786" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.5">ALERTAS</text>
+    <circle cx="900" cy="780" r="5" fill="#7cc4ff" fill-opacity="0.7"/></g><g><rect x="972" y="750" width="220" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="994" y="786" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.5">IOT / SENSORES</text>
+    <circle cx="1168" cy="780" r="5" fill="#7cc4ff" fill-opacity="0.7"/></g><g><rect x="1240" y="750" width="220" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="1262" y="786" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.5">PATCHES</text>
+    <circle cx="1436" cy="780" r="5" fill="#7cc4ff" fill-opacity="0.7"/></g>
+</g>
+<rect x="0" y="0" width="1600" height="1000" fill="none" stroke="rgba(47,107,255,0.18)" stroke-width="2"/>
+</svg>

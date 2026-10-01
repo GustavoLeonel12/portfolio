@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1018"/>
+      <stop offset="55%" stop-color="#070c14"/>
+      <stop offset="100%" stop-color="#04070c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2a6b"/>
+      <stop offset="50%" stop-color="#2f6bff"/>
+      <stop offset="100%" stop-color="#7cc4ff"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7cc4ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7cc4ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/>
+    </pattern>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="rgba(124,196,255,0.16)"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <circle cx="1180" cy="300" r="420" fill="rgba(47,107,255,0.10)"/>
+  <circle cx="320" cy="820" r="360" fill="rgba(47,107,255,0.06)"/>
+<text x="120" y="132" font-family="'JetBrains Mono',monospace" font-size="18" letter-spacing="2.52" fill="#7cc4ff" fill-opacity="0.75">SENTINEL OPS</text>
+<text x="120" y="164" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.82" fill="#7cc4ff" fill-opacity="0.4">NOC · SOC · DETECÇÃO COM IA</text>
+<g stroke="rgba(47,107,255,0.35)" fill="none" stroke-width="1.5">
+  <circle cx="520" cy="540" r="180" stroke-dasharray="6 8"/>
+  <circle cx="520" cy="540" r="110" stroke-dasharray="4 8"/>
+  <path d="M520 540 L340 340 M520 540 L700 340 M520 540 L760 620 M520 540 L300 640 M520 540 L520 780"/>
+</g>
+<g>
+  <circle cx="520" cy="540" r="52" fill="rgba(47,107,255,0.2)" stroke="#7cc4ff"/>
+  <text x="495" y="548" font-family="'JetBrains Mono',monospace" font-size="16" letter-spacing="2.24" fill="#7cc4ff" fill-opacity="0.85">CORE</text>
+  <g><circle cx="340" cy="340" r="30" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.16)"/><circle cx="340" cy="340" r="6" fill="#7cc4ff"/><text x="312" y="392" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.4">FW-01</text></g><g><circle cx="700" cy="340" r="30" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.16)"/><circle cx="700" cy="340" r="6" fill="#7cc4ff"/><text x="672" y="392" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.4">SW-02</text></g><g><circle cx="760" cy="620" r="30" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.16)"/><circle cx="760" cy="620" r="6" fill="#7cc4ff"/><text x="732" y="672" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.4">SRV-03</text></g><g><circle cx="300" cy="640" r="30" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.16)"/><circle cx="300" cy="640" r="6" fill="#ff5f57"/><text x="272" y="692" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.4">IOT</text></g><g><circle cx="520" cy="780" r="30" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.16)"/><circle cx="520" cy="780" r="6" fill="#7cc4ff"/><text x="492" y="832" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.4">WAN</text></g>
+</g>
+<g>
+  <rect x="900" y="210" width="580" height="300" rx="14" fill="rgba(255,80,80,0.06)" stroke="rgba(255,95,87,0.3)"/>
+  <text x="940" y="258" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.6">IA · ANOMALIAS DETECTADAS — 3</text>
+  <g><circle cx="956" cy="310" r="6" fill="#ff5f57" fill-opacity="0.8"/><text x="976" y="315" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.55">TRÁFEGO ANÔMALO 02:14 — IoT VLAN</text></g><g><circle cx="956" cy="366" r="6" fill="#ff5f57" fill-opacity="0.8"/><text x="976" y="371" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.55">TENTATIVA SSH EM MASSA — FW-01</text></g><g><circle cx="956" cy="422" r="6" fill="#ff5f57" fill-opacity="0.8"/><text x="976" y="427" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.55">LATÊNCIA WAN +240% — LINK 2</text></g>
+  <rect x="940" y="440" width="220" height="36" rx="18" fill="rgba(255,95,87,0.2)" stroke="rgba(255,95,87,0.4)"/>
+  <text x="962" y="463" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.7">ISOLAR + ALERTAR</text>
+</g>
+<g>
+  <rect x="900" y="540" width="580" height="310" rx="14" fill="#05080e" stroke="rgba(255,255,255,0.1)"/>
+  <text x="940" y="588" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.45">LOG IA RESUMO — TEMPO REAL</text>
+  <rect x="940" y="620" width="420" height="8" rx="4" fill="rgba(124,196,255,0.4)"/><rect x="940" y="656" width="340" height="8" rx="4" fill="rgba(255,255,255,0.14)"/><rect x="940" y="692" width="380" height="8" rx="4" fill="rgba(124,196,255,0.4)"/><rect x="940" y="728" width="280" height="8" rx="4" fill="rgba(255,255,255,0.14)"/><rect x="940" y="764" width="400" height="8" rx="4" fill="rgba(124,196,255,0.4)"/><rect x="940" y="800" width="300" height="8" rx="4" fill="rgba(255,255,255,0.14)"/>
+</g>
+<rect x="0" y="0" width="1600" height="1000" fill="none" stroke="rgba(47,107,255,0.18)" stroke-width="2"/>
+</svg>

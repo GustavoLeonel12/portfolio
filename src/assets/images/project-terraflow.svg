@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1018"/>
+      <stop offset="55%" stop-color="#070c14"/>
+      <stop offset="100%" stop-color="#04070c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2a6b"/>
+      <stop offset="50%" stop-color="#2f6bff"/>
+      <stop offset="100%" stop-color="#7cc4ff"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7cc4ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7cc4ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/>
+    </pattern>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="rgba(124,196,255,0.16)"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <circle cx="1180" cy="300" r="420" fill="rgba(47,107,255,0.10)"/>
+  <circle cx="320" cy="820" r="360" fill="rgba(47,107,255,0.06)"/>
+<text x="120" y="132" font-family="'JetBrains Mono',monospace" font-size="18" letter-spacing="2.52" fill="#7cc4ff" fill-opacity="0.75">TERRAFLOW</text>
+<text x="120" y="164" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.82" fill="#7cc4ff" fill-opacity="0.4">IAC · TERRAFORM + ANSIBLE · ZERO-TOUCH</text>
+<g>
+  <g><rect x="120" y="210" width="260" height="110" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)"/><text x="148" y="258" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">01</text><text x="148" y="290" font-family="'JetBrains Mono',monospace" font-size="14" letter-spacing="1.96" fill="#7cc4ff" fill-opacity="0.7">CODE</text><path d="M380 265 h28" stroke="#7cc4ff" stroke-width="2"/></g><g><rect x="408" y="210" width="260" height="110" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)"/><text x="436" y="258" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">02</text><text x="436" y="290" font-family="'JetBrains Mono',monospace" font-size="14" letter-spacing="1.96" fill="#7cc4ff" fill-opacity="0.7">PLAN</text><path d="M668 265 h28" stroke="#7cc4ff" stroke-width="2"/></g><g><rect x="696" y="210" width="260" height="110" rx="12" fill="rgba(47,107,255,0.25)" stroke="rgba(124,196,255,0.5)"/><text x="724" y="258" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">03</text><text x="724" y="290" font-family="'JetBrains Mono',monospace" font-size="14" letter-spacing="1.96" fill="#7cc4ff" fill-opacity="0.7">APPLY</text><path d="M956 265 h28" stroke="#7cc4ff" stroke-width="2"/></g><g><rect x="984" y="210" width="260" height="110" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)"/><text x="1012" y="258" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">04</text><text x="1012" y="290" font-family="'JetBrains Mono',monospace" font-size="14" letter-spacing="1.96" fill="#7cc4ff" fill-opacity="0.7">HARDEN</text><path d="M1244 265 h28" stroke="#7cc4ff" stroke-width="2"/></g><g><rect x="1272" y="210" width="260" height="110" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.09)"/><text x="1300" y="258" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">05</text><text x="1300" y="290" font-family="'JetBrains Mono',monospace" font-size="14" letter-spacing="1.96" fill="#7cc4ff" fill-opacity="0.7">MONITOR</text></g>
+</g>
+<g>
+  <rect x="120" y="360" width="880" height="490" rx="14" fill="#05080e" stroke="rgba(255,255,255,0.1)"/>
+  <text x="160" y="408" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">main.tf — gerado com IA + revisado</text>
+  <rect x="160" y="444" width="120" height="9" rx="4.5" fill="rgba(124,196,255,0.5)"/><rect x="160" y="476" width="300" height="9" rx="4.5" fill="rgba(255,255,255,0.22)"/><rect x="160" y="508" width="220" height="9" rx="4.5" fill="rgba(47,107,255,0.55)"/><rect x="160" y="540" width="420" height="9" rx="4.5" fill="rgba(40,200,64,0.5)"/><rect x="160" y="572" width="180" height="9" rx="4.5" fill="rgba(124,196,255,0.5)"/><rect x="160" y="604" width="340" height="9" rx="4.5" fill="rgba(255,255,255,0.22)"/><rect x="160" y="636" width="260" height="9" rx="4.5" fill="rgba(47,107,255,0.55)"/><rect x="160" y="668" width="400" height="9" rx="4.5" fill="rgba(40,200,64,0.5)"/><rect x="160" y="700" width="200" height="9" rx="4.5" fill="rgba(124,196,255,0.5)"/><rect x="160" y="732" width="320" height="9" rx="4.5" fill="rgba(255,255,255,0.22)"/><rect x="160" y="764" width="150" height="9" rx="4.5" fill="rgba(47,107,255,0.55)"/><rect x="160" y="796" width="380" height="9" rx="4.5" fill="rgba(40,200,64,0.5)"/>
+</g>
+<g>
+  <rect x="1040" y="360" width="440" height="490" rx="14" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="1080" y="408" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.45">FROTA PROVISIONADA — 24 HOSTS</text>
+  <g><rect x="1080" y="440" width="180" height="70" rx="8" fill="rgba(47,107,255,0.08)" stroke="rgba(47,107,255,0.25)"/><circle cx="1106" cy="475" r="6" fill="#28c840"/><text x="1122" y="480" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.5">SRV-01</text></g><g><rect x="1280" y="440" width="180" height="70" rx="8" fill="rgba(47,107,255,0.08)" stroke="rgba(47,107,255,0.25)"/><circle cx="1306" cy="475" r="6" fill="#28c840"/><text x="1322" y="480" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.5">SRV-02</text></g><g><rect x="1080" y="532" width="180" height="70" rx="8" fill="rgba(47,107,255,0.08)" stroke="rgba(47,107,255,0.25)"/><circle cx="1106" cy="567" r="6" fill="#28c840"/><text x="1122" y="572" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.5">SRV-03</text></g><g><rect x="1280" y="532" width="180" height="70" rx="8" fill="rgba(47,107,255,0.08)" stroke="rgba(47,107,255,0.25)"/><circle cx="1306" cy="567" r="6" fill="#28c840"/><text x="1322" y="572" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.5">SRV-04</text></g><g><rect x="1080" y="624" width="180" height="70" rx="8" fill="rgba(47,107,255,0.08)" stroke="rgba(47,107,255,0.25)"/><circle cx="1106" cy="659" r="6" fill="#28c840"/><text x="1122" y="664" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.5">SRV-05</text></g><g><rect x="1280" y="624" width="180" height="70" rx="8" fill="rgba(47,107,255,0.08)" stroke="rgba(47,107,255,0.25)"/><circle cx="1306" cy="659" r="6" fill="#28c840"/><text x="1322" y="664" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.5">SRV-06</text></g><g><rect x="1080" y="716" width="180" height="70" rx="8" fill="rgba(47,107,255,0.08)" stroke="rgba(47,107,255,0.25)"/><circle cx="1106" cy="751" r="6" fill="#28c840"/><text x="1122" y="756" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.5">SRV-07</text></g><g><rect x="1280" y="716" width="180" height="70" rx="8" fill="rgba(47,107,255,0.08)" stroke="rgba(47,107,255,0.25)"/><circle cx="1306" cy="751" r="6" fill="#28c840"/><text x="1322" y="756" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.5">SRV-08</text></g>
+  <text x="1080" y="820" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="1.54" fill="#7cc4ff" fill-opacity="0.5">BACKUP 3-2-1 ✓ · UPTIME 99,9%</text>
+</g>
+<rect x="0" y="0" width="1600" height="1000" fill="none" stroke="rgba(47,107,255,0.18)" stroke-width="2"/>
+</svg>

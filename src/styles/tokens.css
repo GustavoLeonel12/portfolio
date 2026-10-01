@@ -1,0 +1,47 @@
+:root {
+  /* base */
+  --bg: #04060a;
+  --bg-elev: #070b12;
+  --bg-panel: rgba(255, 255, 255, 0.022);
+  --bg-panel-strong: rgba(255, 255, 255, 0.045);
+
+  /* accent */
+  --blue: #2f6bff;
+  --blue-bright: #4d8bff;
+  --blue-soft: #7cc4ff;
+  --blue-deep: #0f2a6b;
+  --blue-glow: rgba(47, 107, 255, 0.42);
+  --blue-faint: rgba(47, 107, 255, 0.12);
+
+  /* text */
+  --text: #e9edf6;
+  --text-dim: #98a2b8;
+  --text-faint: #626d84;
+
+  /* lines */
+  --line: rgba(255, 255, 255, 0.075);
+  --line-strong: rgba(255, 255, 255, 0.14);
+  --line-accent: rgba(47, 107, 255, 0.42);
+
+  /* type */
+  --font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur: 0.45s;
+  --dur-slow: 0.8s;
+
+  /* layout */
+  --container: 1280px;
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --section-y: clamp(5.5rem, 12vh, 10rem);
+  --nav-h: 76px;
+
+  /* dynamic pointer */
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+  --pointer-soft: 0;
+}

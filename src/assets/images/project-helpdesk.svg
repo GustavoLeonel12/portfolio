@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1018"/>
+      <stop offset="55%" stop-color="#070c14"/>
+      <stop offset="100%" stop-color="#04070c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2a6b"/>
+      <stop offset="50%" stop-color="#2f6bff"/>
+      <stop offset="100%" stop-color="#7cc4ff"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7cc4ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7cc4ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="rgba(255,255,255,0.045)" stroke-width="1"/>
+    </pattern>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="rgba(124,196,255,0.16)"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#dots)"/>
+  <circle cx="1180" cy="300" r="420" fill="rgba(47,107,255,0.10)"/>
+  <circle cx="320" cy="820" r="360" fill="rgba(47,107,255,0.06)"/>
+<text x="120" y="132" font-family="'JetBrains Mono',monospace" font-size="18" letter-spacing="2.52" fill="#7cc4ff" fill-opacity="0.75">LUFT HELPDESK</text>
+<text x="120" y="164" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.82" fill="#7cc4ff" fill-opacity="0.4">SERVICE DESK · CHAMADOS</text>
+
+  <g>
+    <rect x="120" y="210" width="1000" height="640" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
+    <rect x="120" y="210" width="1000" height="42" rx="14" fill="rgba(255,255,255,0.035)"/>
+    <rect x="120" y="238" width="1000" height="14" fill="rgba(255,255,255,0.035)"/>
+    <line x1="120" y1="252" x2="1120" y2="252" stroke="rgba(255,255,255,0.08)"/>
+    <circle cx="146" cy="231" r="5" fill="#ff5f57" fill-opacity="0.65"/>
+    <circle cx="166" cy="231" r="5" fill="#febc2e" fill-opacity="0.65"/>
+    <circle cx="186" cy="231" r="5" fill="#28c840" fill-opacity="0.65"/>
+    
+    <g>
+      <rect x="160" y="290" width="280" height="120" rx="10" fill="rgba(47,107,255,0.10)" stroke="rgba(47,107,255,0.35)"/>
+      <rect x="180" y="318" width="90" height="8" rx="4" fill="rgba(255,255,255,0.22)"/>
+      <text x="400" y="400" font-family="'Space Grotesk',sans-serif" font-size="46" font-weight="600" fill="#e9edf6" fill-opacity="0.9">248</text>
+      <text x="180" y="384" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.45">CHAMADOS ABERTOS</text>
+      <rect x="470" y="290" width="240" height="120" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+      <rect x="490" y="318" width="80" height="8" rx="4" fill="rgba(255,255,255,0.2)"/>
+      <text x="700" y="400" font-family="'Space Grotesk',sans-serif" font-size="46" font-weight="600" fill="#e9edf6" fill-opacity="0.75">92%</text>
+      <text x="490" y="384" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.45">SLA ATENDIDO</text>
+    </g>
+    <g><rect x="160" y="450" width="920" height="38" rx="8" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)"/>
+        <circle cx="186" cy="469" r="6" fill="#2f6bff" fill-opacity="0.35"/>
+        <rect x="208" y="465" width="361.2" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+        <rect x="1020" y="465" width="46" height="8" rx="4" fill="rgba(124,196,255,0.28)"/></g><g><rect x="160" y="504" width="920" height="38" rx="8" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)"/>
+        <circle cx="186" cy="523" r="6" fill="#2f6bff" fill-opacity="0.44999999999999996"/>
+        <rect x="208" y="519" width="327.59999999999997" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+        <rect x="1020" y="519" width="46" height="8" rx="4" fill="rgba(124,196,255,0.28)"/></g><g><rect x="160" y="558" width="920" height="38" rx="8" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)"/>
+        <circle cx="186" cy="577" r="6" fill="#2f6bff" fill-opacity="0.55"/>
+        <rect x="208" y="573" width="378" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+        <rect x="1020" y="573" width="46" height="8" rx="4" fill="rgba(124,196,255,0.28)"/></g><g><rect x="160" y="612" width="920" height="38" rx="8" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)"/>
+        <circle cx="186" cy="631" r="6" fill="#2f6bff" fill-opacity="0.65"/>
+        <rect x="208" y="627" width="294" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+        <rect x="1020" y="627" width="46" height="8" rx="4" fill="rgba(124,196,255,0.28)"/></g><g><rect x="160" y="666" width="920" height="38" rx="8" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)"/>
+        <circle cx="186" cy="685" r="6" fill="#2f6bff" fill-opacity="0.75"/>
+        <rect x="208" y="681" width="352.8" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+        <rect x="1020" y="681" width="46" height="8" rx="4" fill="rgba(124,196,255,0.28)"/></g><g><rect x="160" y="720" width="920" height="38" rx="8" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)"/>
+        <circle cx="186" cy="739" r="6" fill="#2f6bff" fill-opacity="0.85"/>
+        <rect x="208" y="735" width="319.2" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+        <rect x="1020" y="735" width="46" height="8" rx="4" fill="rgba(124,196,255,0.28)"/></g><g><rect x="160" y="774" width="920" height="38" rx="8" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.05)"/>
+        <circle cx="186" cy="793" r="6" fill="#2f6bff" fill-opacity="0.9500000000000001"/>
+        <rect x="208" y="789" width="344.4" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+        <rect x="1020" y="789" width="46" height="8" rx="4" fill="rgba(124,196,255,0.28)"/></g>
+  
+  </g>
+<g>
+  <rect x="1160" y="210" width="320" height="300" rx="14" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="1200" y="258" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.45">TEMPO MÉDIO</text>
+  <polyline points="1200,470 1240,410 1280,432 1320,352 1360,378 1400,300 1440,318" fill="none" stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="1200" y1="470" x2="1440" y2="470" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="1400" cy="300" r="5" fill="#7cc4ff"/>
+</g>
+<rect x="1160" y="540" width="320" height="310" rx="14" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.08)"/>
+<text x="1200" y="588" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.45">CATEGORIAS</text>
+<g><text x="1200" y="638" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">REDE</text>
+  <rect x="1200" y="646" width="240" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="1200" y="646" width="192" height="4" rx="2" fill="url(#accent)"/></g><g><text x="1200" y="682" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">SERVIDOR</text>
+  <rect x="1200" y="690" width="240" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="1200" y="690" width="132" height="4" rx="2" fill="url(#accent)"/></g><g><text x="1200" y="726" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">HARDWARE</text>
+  <rect x="1200" y="734" width="240" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="1200" y="734" width="163.20000000000002" height="4" rx="2" fill="url(#accent)"/></g><g><text x="1200" y="770" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">ACESSO</text>
+  <rect x="1200" y="778" width="240" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="1200" y="778" width="96" height="4" rx="2" fill="url(#accent)"/></g><g><text x="1200" y="814" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.68" fill="#7cc4ff" fill-opacity="0.4">E-MAIL</text>
+  <rect x="1200" y="822" width="240" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="1200" y="822" width="72" height="4" rx="2" fill="url(#accent)"/></g>
+<rect x="0" y="0" width="1600" height="1000" fill="none" stroke="rgba(47,107,255,0.18)" stroke-width="2"/>
+</svg>

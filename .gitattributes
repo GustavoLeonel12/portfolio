@@ -1,0 +1,14 @@
+# Normaliza finais de linha: LF no repositorio, CRLF no working dir do Windows.
+# Sem isso o git em Windows grava CRLF e o diff contra o CI vira ruido.
+* text=auto
+
+# Binarios: nunca devem passar por conversao de linha
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.pdf binary

@@ -1,0 +1,212 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(1.5rem, 3.5vw, 3.5rem);
+  align-items: start;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.prose p {
+  font-size: clamp(0.97rem, 1.08vw, 1.06rem);
+  line-height: 1.78;
+  font-weight: 300;
+  color: var(--text-dim);
+  max-width: 58ch;
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.4s var(--ease-out);
+}
+
+.chip svg {
+  color: var(--blue-soft);
+}
+
+.highlights li:hover .chip {
+  color: var(--text);
+  border-color: var(--line-accent);
+  background: rgba(47, 107, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* portrait */
+.right {
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+}
+
+.portraitCard {
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.portraitFrame {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #060a11;
+  aspect-ratio: 1 / 1;
+}
+
+.portraitFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.9s var(--ease-out);
+}
+
+.portraitCard:hover .portraitFrame img {
+  transform: scale(1.06);
+}
+
+.portraitScan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(124, 196, 255, 0.09) 48%,
+    transparent 52%
+  );
+  background-size: 100% 220%;
+  animation: scan 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 -120%;
+  }
+  100% {
+    background-position: 0 120%;
+  }
+}
+
+/* PERFIL · 01 (mono) + assinatura, alinhados pela linha de base */
+.portraitCaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 0.2rem 0.3rem;
+}
+
+.portraitCaption .mono-tag {
+  white-space: nowrap;
+}
+
+.portraitSignature {
+  flex-shrink: 0;
+}
+
+/* stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 6vh, 4.5rem);
+}
+
+.stat {
+  position: relative;
+  padding: 1.5rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.3rem;
+  overflow: hidden;
+}
+
+.statIndex {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--text-faint);
+  opacity: 0.5;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 3.6vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.statLabel {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.005em;
+}
+
+.statCaption {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    position: relative;
+    top: 0;
+    max-width: 420px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    max-width: none;
+  }
+}
